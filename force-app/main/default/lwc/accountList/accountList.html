@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Account List">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Search by Name" value={searchKey} onchange={handleSearchKeyChange}></lightning-input>
+            <lightning-button label="Search" onclick={handleSearch}></lightning-button>
+        </div>
+
+        <template if:true={searchKey}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Industry</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={accounts} for:item="acc">
+                        <tr key={acc.Id}>
+                            <td>{acc.Name}</td>
+                            <td>{acc.Industry}</td>
+                            <td>{acc.Phone}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+
+        
+    </lightning-card>
+</template>

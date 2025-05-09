@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Create Contact">
+        <lightning-input label="Name" value={name} onchange={handleChange}></lightning-input>
+        <lightning-input label="Email" type="email" value={email} onchange={handleChange}></lightning-input>
+        <lightning-input label="Phone" type="phone" value={phone} onchange={handleChange}></lightning-input>
+        <lightning-button label="Create Contact" onclick={handleCreate} variant="brand"></lightning-button>
+    </lightning-card>
+</template>

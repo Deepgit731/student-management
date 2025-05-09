@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Latest 5 Accounts">
+        <template if:true={accounts}>
+            <ul>
+                <template for:each={accounts} for:item="account">
+                    <li key={account.Id}>
+                        <p><strong>Name:</strong> {account.Name} | <strong>Industry:</strong> {account.Industry}</p>
+                    </li>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+    
+</template>

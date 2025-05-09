@@ -1,0 +1,15 @@
+.Result {
+
+    color: brown;
+    border: 1px black;
+  }
+
+.btn{
+    background: #000;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    outline: none;
+    margin-right: 1rem;
+}

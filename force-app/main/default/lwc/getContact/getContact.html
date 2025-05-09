@@ -1,0 +1,15 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+    <lightning-card title="Contact Search" icon-name="standard:contact">
+        <lightning-input type="search" onchange={handleKeyChange} placeholder="Search Contacts"> </lightning-input>
+            <template if:true={searchKey}>
+                <template for:each={contacts} for:item="contact">
+                    <p key={contact.Id}>
+                        {contact.FirstName} {contact.LastName} 
+                    </p>
+                </template>
+            </template>
+    </lightning-card>
+</template>

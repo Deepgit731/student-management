@@ -1,0 +1,9 @@
+<template>
+    <div>
+    <lightning-input label="Enter Text" value={inputText} onchange={handleInputChange}></lightning-input>
+    <lightning-button label="Submit" onclick={handleButtonClick}></lightning-button>
+    <template if:true={displayedText}>
+        <p>You entered: {displayedText}</p>
+    </template>
+    </div>
+</template>

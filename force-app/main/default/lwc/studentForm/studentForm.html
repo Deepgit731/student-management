@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Add New Student">
+        <lightning-record-edit-form 
+            object-api-name="Student__c" 
+            onsuccess={handleSuccess}
+            onerror={handleError}>
+
+            <lightning-messages></lightning-messages>
+
+            <lightning-input-field field-name="Student_Name__c"></lightning-input-field>
+            <lightning-input-field field-name="Student_age__c"></lightning-input-field>
+            <lightning-input-field field-name="Grade__c"></lightning-input-field>
+            <lightning-input-field field-name="Mobile_No__c"></lightning-input-field>
+            <lightning-input-field field-name="Student_Email__c"></lightning-input-field>
+
+            <lightning-button 
+                type="submit" 
+                label="Add Student" 
+                class="slds-m-top_small">
+            </lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

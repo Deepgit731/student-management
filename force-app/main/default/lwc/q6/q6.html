@@ -1,0 +1,11 @@
+<template>
+    <div>
+        <h1>Fruit List</h1>
+        <ul>
+            <template for:each={fruits} for:item="fruit">
+                <li key={fruit}>{fruit}</li>
+            </template>
+        </ul>
+    </div>
+    
+</template>

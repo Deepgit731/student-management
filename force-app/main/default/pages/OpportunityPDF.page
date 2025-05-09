@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity" renderAs="pdf">
+    <h1>Opportunity Summary</h1>
+    <p><strong>Opportunity Name:</strong> {!Opportunity.Name}</p>
+    <p><strong>Amount:</strong> {!Opportunity.Amount}</p>
+    <p><strong>Close Date:</strong> {!Opportunity.CloseDate}</p>
+    <p><strong>Stage:</strong> {!Opportunity.StageName}</p>
+</apex:page>

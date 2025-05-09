@@ -1,0 +1,36 @@
+<template>
+    
+    <template if:true={cases}>
+        <lightning-datatable
+            key-field="Id"
+            data={cases}
+            columns={columns}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </template>
+
+    <template if:true={selectedCase}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-modal__title">{selectedCase.Subject}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p><strong>Case #:</strong> {selectedCase.CaseNumber}</p>
+                    <p><strong>Status:</strong> {selectedCase.Status}</p>
+                    <p><strong>Priority:</strong> {selectedCase.Priority}</p>
+                    <p><strong>Origin:</strong> {selectedCase.Origin}</p>
+                    <p><strong>Description:</strong> {selectedCase.Description}</p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={error}>
+        <p>Error loading cases: {error}</p>
+    </template>
+</template>

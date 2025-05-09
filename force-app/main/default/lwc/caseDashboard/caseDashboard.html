@@ -1,0 +1,26 @@
+<template>
+    <lightning-button 
+        label="New Case" 
+        icon-name="utility:add" 
+        variant="brand" 
+        onclick={handleNewCase}
+        >
+    </lightning-button>
+    <c-case-filter onfilterschange={handleFilterChange}></c-case-filter>
+    
+
+    <c-case-list
+        status={selectedStatus}
+        priority={selectedPriority}
+        origin={selectedOrigin}
+        onview={handleView}
+        onedit={handleEdit}
+        ondelete={handleDelete}>
+    </c-case-list>
+    <c-case-form-model 
+        record-id={selectedCaseId} 
+        is-open={isFormOpen} 
+        oncasesaved={refreshCaseList} 
+        onclose={handleModalClose}>
+    </c-case-form-model>
+</template>

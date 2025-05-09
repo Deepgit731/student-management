@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Calculator" icon-name="utility:calculator">
+      <div class="slds-p-around_medium">
+        <lightning-input type="number" label="First Number" value={firstNumber} onchange={handleFirstNumberChange}></lightning-input>
+        <lightning-input type="number" label="Second Number" value={secondNumber} onchange={handleSecondNumberChange}></lightning-input>
+  
+      <div class="jiefej">
+        <button class="btn" onclick={handleAdd} >Add</button>
+        <button class="btn" onclick={handleSubtract}  >Subtract</button>
+        <button class="btn" onclick={handleMultiply} >Multiply</button>
+        <button class="btn" onclick={handleDivide} >Divide</button>
+      </div>
+  
+        <p class="Result"><strong>Result:</strong> {result}</p>
+      </div>
+    </lightning-card>
+  </template>
+  

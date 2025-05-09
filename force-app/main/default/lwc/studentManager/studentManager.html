@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Student Manager">
+        <c-student-form onstudentadded={handleStudentAdded}></c-student-form>
+        <c-student-filter ongradechange={handleGradeChange}></c-student-filter>
+        <c-student-list students={students}></c-student-list>
+    </lightning-card>
+</template>

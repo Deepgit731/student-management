@@ -1,0 +1,25 @@
+<template>
+    <template if:true={isVisible}>
+        <lightning-modal>
+            <div class="slds-text-heading_medium">Case Details</div>
+            <lightning-record-view-form record-id={caseId} object-api-name="Case">
+                <lightning-output-field field-name="Subject"></lightning-output-field>
+                <lightning-output-field field-name="Description"></lightning-output-field>
+                <lightning-output-field field-name="Priority"></lightning-output-field>
+                <lightning-output-field field-name="Status"></lightning-output-field>
+                <lightning-output-field field-name="Origin"></lightning-output-field>
+
+                <!-- Optional Related Contacts or Notes -->
+                <div class="related-records">
+                    <lightning-button label="Show Related Contacts" onclick={handleRelatedContacts}></lightning-button>
+                    <lightning-button label="Show Related Notes" onclick={handleRelatedNotes}></lightning-button>
+                </div>
+
+                <!-- Case Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Close" onclick={handleClose}></lightning-button>
+                </footer>
+            </lightning-record-view-form>
+        </lightning-modal>
+    </template>
+</template>

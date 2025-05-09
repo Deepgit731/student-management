@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Related Opportunities" icon-name="custom:custom14">
+        <lightning-button label="Show Opportunities" onclick={handleShowOpportunities} ></lightning-button>
+
+        <template if:true={showList}>
+            <ul>
+                <template for:each={opportunities.data} for:item="opportunity">
+                    <li key={opportunity.Id}>
+                        {opportunity.Name}
+                    </li>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+</template>

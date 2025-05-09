@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Update Account Industry" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                name="industry"
+                label="Select Industry"
+                value={newIndustry}
+                placeholder="Select Industry"
+                options={industryOptions}
+                onchange={handleIndustryChange}>
+            </lightning-combobox>
+
+            <lightning-button class="slds-m-top_small" label="Update Industry" variant="brand" onclick={handleUpdateClick}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <h1 slot="title">Case Summary</h1>
+        <div class="slds-p-around_medium">
+            <p><strong>Case Number:</strong> {caseRecord.CaseNumber}</p>
+            <p><strong>Subject:</strong> {caseRecord.Subject}</p>
+            <p><strong>Status:</strong> {caseRecord.Status}</p>
+            <p><strong>Priority:</strong> {caseRecord.Priority}</p>
+            <p><strong>Origin:</strong> {caseRecord.Origin}</p>
+            <p><strong>Description:</strong> {caseRecord.Description}</p>
+        </div>
+        <footer class="slds-card__footer">
+            <lightning-button label="Back" onclick={handleBack}></lightning-button>
+        </footer>
+    </lightning-card>
+</template>
