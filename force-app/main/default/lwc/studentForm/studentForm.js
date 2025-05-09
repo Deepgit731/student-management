@@ -10,8 +10,6 @@ export default class StudentForm extends LightningElement {
                 variant: 'success'
             })
         );
-
-        // Notify parent to refresh the list
         this.dispatchEvent(new CustomEvent('studentadded'));
     }
 }
