@@ -1,0 +1,97 @@
+<template>
+    <div class="slds-box slds-p-around_medium" style="background-color: white;">
+        <!-- Filter and search section -->
+        <lightning-combobox
+            label="Filter by Event Type"
+            value={selectedType}
+            options={typeOptions}
+            onchange={handleTypeChange}>
+        </lightning-combobox>
+
+        <lightning-input
+            type="search"
+            label="Search Events"
+            value={searchKey}
+            onchange={handleSearchChange}
+            class="slds-m-top_small">
+        </lightning-input>
+
+        <!-- Events Table -->
+        <template if:true={events}>
+            <div class="slds-m-top_medium" style="overflow-x: auto;">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered" style="min-width: 100%;">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Location</th>
+                            <th>Description</th>
+                            <th>Action</th> <!-- Add a column for Register Now -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={events} for:item="event">
+                            <tr key={event.Id}>
+                                <td>{event.Name}</td>
+                                <td>{event.Event_Date__c}</td>
+                                <td>{event.Event_Type__c}</td>
+                                <td>{event.Location__c}</td>
+                                <td>{event.Description__c}</td>
+                                <td>
+                                    <template if:false={event.isRegistered}>
+                                        <lightning-button label="Register Now" onclick={handleRegister} data-id={event.Id}></lightning-button>
+                                    </template>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+    </div>
+
+    <!-- Registration Modal with Form -->
+    <template if:true={showRegistrationForm}>
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Register for Event</h2>
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeRegistrationForm}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="close"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-record-edit-form
+                        object-api-name="Event_Registration__c"
+                        onsuccess={handleRegistrationSuccess}
+                        onerror={handleRegistrationError}>
+
+                        <!-- Pre-fill Event__c as readonly -->
+                       
+
+                        <!-- Other fields for user input -->
+                        <lightning-input-field field-name="Event__c" value={currentEventId} variant="label-hidden" ></lightning-input-field>
+                        <lightning-input-field field-name="Name" required></lightning-input-field>
+
+                        <!-- Email__c (required) -->
+                        <lightning-input-field field-name="Email__c" required></lightning-input-field>
+
+                        <!-- Attendee__c -->
+                        <lightning-input-field field-name="Attendee__c"></lightning-input-field>
+
+                        <!-- Status__c -->
+                        <lightning-input-field field-name="Status__c"></lightning-input-field>
+
+                        <div class="slds-m-top_medium">
+                            <lightning-button type="submit" label="Register" variant="brand"></lightning-button>
+                            <lightning-button label="Cancel" onclick={closeRegistrationForm} class="slds-m-left_small"></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

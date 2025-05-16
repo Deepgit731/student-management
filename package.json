@@ -16,8 +16,8 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^2.2.0",
     "@lwc/engine-dom": "^8.18.0",
+    "@lwc/eslint-plugin-lwc": "^2.2.0",
     "@lwc/jest-preset": "^19.1.0",
     "@prettier/plugin-xml": "^3.4.1",
     "@salesforce/eslint-config-lwc": "^3.7.2",
@@ -40,5 +40,20 @@
     "**/{aura,lwc}/**/*.js": [
       "eslint"
     ]
+  },
+  "main": "jest.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepgit731/student-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deepgit731/student-management/issues"
+  },
+  "homepage": "https://github.com/Deepgit731/student-management#readme",
+  "dependencies": {
+    "chart.js": "^4.4.3"
   }
 }

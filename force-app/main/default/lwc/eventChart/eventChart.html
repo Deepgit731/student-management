@@ -1,0 +1,11 @@
+<template>
+  <lightning-card title="Event Statistics">
+    <div class="slds-p-around_medium">
+      <canvas lwc:dom="manual" class="chart"></canvas>
+
+      <template if:true={error}>
+        <p class="slds-text-color_error">{error}</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>
