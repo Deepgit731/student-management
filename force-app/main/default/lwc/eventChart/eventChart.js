@@ -40,11 +40,11 @@ export default class EventChart extends LightningElement {
         datasets: [{
           label: 'Event Count',
           data: counts,
-          backgroundColor: 'rgba(232, 54, 235, 0.7)',
+          backgroundColor: 'rgba(54, 235, 90, 0.7)',
           borderColor: 'rgb(187, 54, 235)',
           borderWidth: 1
         }]
-      },
+      }, 
       options: {
         responsive: true,
         maintainAspectRatio: false,
