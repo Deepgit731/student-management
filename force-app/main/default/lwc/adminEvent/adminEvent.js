@@ -16,6 +16,7 @@ export default class AdminEvent extends LightningElement {
     @track registrations = [];
     @track selectedEventName = '';
     @track editRegId = null;
+    //hello
 
     columns = [
         { label: 'Name', fieldName: 'Name' },
