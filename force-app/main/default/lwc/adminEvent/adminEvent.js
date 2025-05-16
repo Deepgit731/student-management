@@ -17,6 +17,7 @@ export default class AdminEvent extends LightningElement {
     @track selectedEventName = '';
     @track editRegId = null;
     //hello
+    //hellogit add .
 
     columns = [
         { label: 'Name', fieldName: 'Name' },
